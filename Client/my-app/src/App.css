@@ -64,3 +64,21 @@
 .input-placeholder::placeholder {
   color: #ccd6f6;
 }
+
+.container {
+  background-color: #0a192f;
+  color: #a8b2d1;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.btn-custom {
+  background-color: #64ffda;
+  color: #0a192f;
+}
+
+.form-control-custom {
+  background-color: #0a192f;
+  color: #a8b2d1;
+  border: 1px solid #64ffda;
+}

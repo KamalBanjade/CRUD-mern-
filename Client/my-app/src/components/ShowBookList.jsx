@@ -20,28 +20,29 @@ function ShowBookList() {
 
   const bookList =
     books.length === 0
-      ? 'there is no book record!'
+      ? 'There is no book record!'
       : books.map((book, k) => <BookCard book={book} key={k} />);
 
   return (
-    <div className='ShowBookList'>
+    <div className='ShowBookList' style={{ backgroundColor: "#0a192f", color: "#a8b2d1", minHeight: "100vh", padding: "20px" }}>
       <div className='container'>
         <div className='row'>
           <div className='col-md-12'>
             <br />
-            <h2 className='display-4 text-center'>Books List</h2>
+            <h2 className='display-4 text-center' style={{ color: "#a8b2d1" }}>Books List</h2>
           </div>
 
           <div className='col-md-11'>
             <Link
               to='/create-book'
-              className='btn btn-outline-warning float-right'
+              className='btn'
+              style={{ backgroundColor: "#64ffda", color: "#0a192f", marginBottom: "20px" }}
             >
               + Add New Book
             </Link>
             <br />
             <br />
-            <hr />
+            <hr style={{ borderColor: "#64ffda" }} />
           </div>
         </div>
 
