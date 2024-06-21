@@ -61,107 +61,110 @@ function UpdateBookInfo(props) {
   };
 
   return (
-    <div className='UpdateBookInfo container'>
-      <div className='row'>
-        <div className='col-md-8 m-auto'>
-          <br />
-          <Link to='/' className='btn btn-custom mb-4'>
-            Show Book List
-          </Link>
+    <div className="UpdateBookInfo" style={{ backgroundColor: "#0a192f", color: "#a8b2d1", minHeight: "100vh", display: "flex", justifyContent: "center", alignItems: "center" }}>
+      <div className="container" style={{ maxWidth: "600px" }}>
+        <div className="row">
+          <div className="col-12 text-center">
+            <Link to="/" className="btn" style={{ backgroundColor: "#64ffda", color: "#0a192f", marginBottom: "20px" }}>
+              Show Book List
+            </Link>
+          </div>
+          <div className="col-12">
+            <h1 className="display-6 text-center">Edit Book</h1>
+            <p className="lead text-center">Update Book's Info</p>
+            <form noValidate onSubmit={onSubmit}>
+              <div className="form-group">
+                <label htmlFor="title">Title</label>
+                <input
+                  type="text"
+                  placeholder="Title of the Book"
+                  name="title"
+                  className="form-control input-placeholder"
+                  value={book.title}
+                  onChange={onChange}
+                  style={{ backgroundColor: "#0a192f", color: "#a8b2d1", border: "1px solid #64ffda" }}
+                />
+              </div>
+              <br />
+
+              <div className="form-group">
+                <label htmlFor="isbn">ISBN</label>
+                <input
+                  type="text"
+                  placeholder="ISBN"
+                  name="isbn"
+                  className="form-control input-placeholder"
+                  value={book.isbn}
+                  onChange={onChange}
+                  style={{ backgroundColor: "#0a192f", color: "#a8b2d1", border: "1px solid #64ffda" }}
+                />
+              </div>
+              <br />
+
+              <div className="form-group">
+                <label htmlFor="author">Author</label>
+                <input
+                  type="text"
+                  placeholder="Author"
+                  name="author"
+                  className="form-control input-placeholder"
+                  value={book.author}
+                  onChange={onChange}
+                  style={{ backgroundColor: "#0a192f", color: "#a8b2d1", border: "1px solid #64ffda" }}
+                />
+              </div>
+              <br />
+
+              <div className="form-group">
+                <label htmlFor="description">Description</label>
+                <textarea
+                  type="text"
+                  placeholder="Description of the Book"
+                  name="description"
+                  className="form-control input-placeholder"
+                  value={book.description}
+                  onChange={onChange}
+                  style={{ backgroundColor: "#0a192f", color: "#a8b2d1", border: "1px solid #64ffda" }}
+                />
+              </div>
+              <br />
+
+              <div className="form-group">
+                <label htmlFor="published_date">Published Date</label>
+                <input
+                  type="text"
+                  placeholder="Published Date"
+                  name="published_date"
+                  className="form-control input-placeholder"
+                  value={book.published_date}
+                  onChange={onChange}
+                  style={{ backgroundColor: "#0a192f", color: "#a8b2d1", border: "1px solid #64ffda" }}
+                />
+              </div>
+              <br />
+
+              <div className="form-group">
+                <label htmlFor="publisher">Publisher</label>
+                <input
+                  type="text"
+                  placeholder="Publisher of the Book"
+                  name="publisher"
+                  className="form-control input-placeholder"
+                  value={book.publisher}
+                  onChange={onChange}
+                  style={{ backgroundColor: "#0a192f", color: "#a8b2d1", border: "1px solid #64ffda" }}
+                />
+              </div>
+              <button
+                type="submit"
+                className="btn btn-block mt-4 mb-4 w-100"
+                style={{ backgroundColor: "#64ffda", color: "#0a192f" }}
+              >
+                Update Book
+              </button>
+            </form>
+          </div>
         </div>
-        <div className='col-md-10 m-auto'>
-          <h1 className='display-4 text-center'>Edit Book</h1>
-          <p className='lead text-center'>Update Book's Info</p>
-        </div>
-      </div>
-
-      <div className='col-md-8 m-auto'>
-        <form noValidate onSubmit={onSubmit}>
-          <div className='form-group'>
-            <label htmlFor='title'>Title</label>
-            <input
-              type='text'
-              placeholder='Title of the Book'
-              name='title'
-              className='form-control form-control-custom input-placeholder'
-              value={book.title}
-              onChange={onChange}
-            />
-          </div>
-          <br />
-
-          <div className='form-group'>
-            <label htmlFor='isbn'>ISBN</label>
-            <input
-              type='text'
-              placeholder='ISBN'
-              name='isbn'
-              className='form-control form-control-custom input-placeholder'
-              value={book.isbn}
-              onChange={onChange}
-            />
-          </div>
-          <br />
-
-          <div className='form-group'>
-            <label htmlFor='author'>Author</label>
-            <input
-              type='text'
-              placeholder='Author'
-              name='author'
-              className='form-control form-control-custom input-placeholder'
-              value={book.author}
-              onChange={onChange}
-            />
-          </div>
-          <br />
-
-          <div className='form-group'>
-            <label htmlFor='description'>Description</label>
-            <textarea
-              type='text'
-              placeholder='Description of the Book'
-              name='description'
-              className='form-control form-control-custom input-placeholder'
-              value={book.description}
-              onChange={onChange}
-            />
-          </div>
-          <br />
-
-          <div className='form-group'>
-            <label htmlFor='published_date'>Published Date</label>
-            <input
-              type='text'
-              placeholder='Published Date'
-              name='published_date'
-              className='form-control form-control-custom input-placeholder'
-              value={book.published_date}
-              onChange={onChange}
-            />
-          </div>
-          <br />
-
-          <div className='form-group'>
-            <label htmlFor='publisher'>Publisher</label>
-            <input
-              type='text'
-              placeholder='Publisher of the Book'
-              name='publisher'
-              className='form-control form-control-custom input-placeholder'
-              value={book.publisher}
-              onChange={onChange}
-            />
-          </div>
-          <br />
-
-          <button
-            type='submit'
-            className='btn btn-custom btn-lg btn-block'
-          >
-            Update Book
-          </button>
-        </form>
       </div>
     </div>
   );

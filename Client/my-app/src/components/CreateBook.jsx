@@ -41,16 +41,15 @@ const CreateBook = (props) => {
   };
 
   return (
-    <div className="CreateBook" style={{ backgroundColor: "#0a192f", color: "#a8b2d1", minHeight: "100vh", padding: "20px" }}>
-      <div className="container">
+    <div className="CreateBook" style={{ backgroundColor: "#0a192f", color: "#a8b2d1", minHeight: "100vh", display: "flex", justifyContent: "center", alignItems: "center" }}>
+      <div className="container" style={{ maxWidth: "600px" }}>
         <div className="row">
-          <div className="col-md-8 m-auto">
-            <br />
+          <div className="col-12 text-center">
             <Link to="/" className="btn" style={{ backgroundColor: "#64ffda", color: "#0a192f", marginBottom: "20px" }}>
               Show Book List
             </Link>
           </div>
-          <div className="col-md-10 m-auto">
+          <div className="col-12">
             <h1 className="display-4 text-center">Add Book</h1>
             <p className="lead text-center">Create new book</p>
             <form noValidate onSubmit={onSubmit}>
