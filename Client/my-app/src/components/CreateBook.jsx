@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import '../App.css'; // Make sure this imports your CSS file
 
 const CreateBook = (props) => {
   const navigate = useNavigate();
@@ -32,7 +33,6 @@ const CreateBook = (props) => {
           published_date: "",
           publisher: "",
         });
-        // Push to /
         navigate("/");
       })
       .catch((err) => {
@@ -41,13 +41,13 @@ const CreateBook = (props) => {
   };
 
   return (
-    <div className="CreateBook">
+    <div className="CreateBook" style={{ backgroundColor: "#0a192f", color: "#a8b2d1", minHeight: "100vh", padding: "20px" }}>
       <div className="container">
         <div className="row">
           <div className="col-md-8 m-auto">
             <br />
-            <Link to="/" className="btn btn-outline-warning float-left">
-              Show BooK List
+            <Link to="/" className="btn" style={{ backgroundColor: "#64ffda", color: "#0a192f", marginBottom: "20px" }}>
+              Show Book List
             </Link>
           </div>
           <div className="col-md-10 m-auto">
@@ -59,9 +59,10 @@ const CreateBook = (props) => {
                   type="text"
                   placeholder="Title of the Book"
                   name="title"
-                  className="form-control"
+                  className="form-control input-placeholder"
                   value={book.title}
                   onChange={onChange}
+                  style={{ backgroundColor: "#0a192f", color: "#a8b2d1", border: "1px solid #64ffda" }}
                 />
               </div>
               <br />
@@ -70,9 +71,10 @@ const CreateBook = (props) => {
                   type="text"
                   placeholder="ISBN"
                   name="isbn"
-                  className="form-control"
+                  className="form-control input-placeholder"
                   value={book.isbn}
                   onChange={onChange}
+                  style={{ backgroundColor: "#0a192f", color: "#a8b2d1", border: "1px solid #64ffda" }}
                 />
               </div>
               <br />
@@ -81,9 +83,10 @@ const CreateBook = (props) => {
                   type="text"
                   placeholder="Author"
                   name="author"
-                  className="form-control"
+                  className="form-control input-placeholder"
                   value={book.author}
                   onChange={onChange}
+                  style={{ backgroundColor: "#0a192f", color: "#a8b2d1", border: "1px solid #64ffda" }}
                 />
               </div>
               <br />
@@ -92,20 +95,22 @@ const CreateBook = (props) => {
                   type="text"
                   placeholder="Describe this book"
                   name="description"
-                  className="form-control"
+                  className="form-control input-placeholder"
                   value={book.description}
                   onChange={onChange}
+                  style={{ backgroundColor: "#0a192f", color: "#a8b2d1", border: "1px solid #64ffda" }}
                 />
               </div>
               <br />
               <div className="form-group">
                 <input
                   type="date"
-                  placeholder="published_date"
+                  placeholder="Published Date"
                   name="published_date"
-                  className="form-control"
+                  className="form-control input-placeholder"
                   value={book.published_date}
                   onChange={onChange}
+                  style={{ backgroundColor: "#0a192f", color: "#a8b2d1", border: "1px solid #64ffda" }}
                 />
               </div>
               <br />
@@ -114,14 +119,16 @@ const CreateBook = (props) => {
                   type="text"
                   placeholder="Publisher of this Book"
                   name="publisher"
-                  className="form-control"
+                  className="form-control input-placeholder"
                   value={book.publisher}
                   onChange={onChange}
+                  style={{ backgroundColor: "#0a192f", color: "#a8b2d1", border: "1px solid #64ffda" }}
                 />
               </div>
               <button
                 type="submit"
-                className="btn btn-outline-warning btn-block mt-4 mb-4 w-100"
+                className="btn btn-block mt-4 mb-4 w-100"
+                style={{ backgroundColor: "#64ffda", color: "#0a192f" }}
               >
                 Submit
               </button>

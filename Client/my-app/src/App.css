@@ -61,3 +61,6 @@
   font-size: 1em;
   padding: 10px 0 10px 0;
 }
+.input-placeholder::placeholder {
+  color: #ccd6f6;
+}

@@ -5,7 +5,7 @@ import axios from 'axios';
 
 function ShowBookDetails(props) {
   const [book, setBook] = useState({});
-
+  
   const { id } = useParams();
   const navigate = useNavigate();
 
@@ -71,12 +71,12 @@ function ShowBookDetails(props) {
   );
 
   return (
-    <div className='ShowBookDetails'>
+    <div className='ShowBookDetails' style={{ backgroundColor: '#0a192f', color: '#a8b2d1', minHeight: '100vh', padding: '20px' }}>
       <div className='container'>
         <div className='row'>
           <div className='col-md-10 m-auto'>
             <br /> <br />
-            <Link to='/' className='btn btn-outline-warning float-left'>
+            <Link to='/' className='btn' style={{ backgroundColor: '#64ffda', color: '#0a192f', marginBottom: '20px' }}>
               Show Book List
             </Link>
           </div>
@@ -90,7 +90,8 @@ function ShowBookDetails(props) {
           <div className='col-md-6 m-auto'>
             <button
               type='button'
-              className='btn btn-outline-danger btn-lg btn-block'
+              className='btn btn-lg btn-block'
+              style={{ backgroundColor: '#64ffda', color: '#0a192f', marginTop: '20px' }}
               onClick={() => {
                 onDeleteClick(book._id);
               }}
@@ -101,7 +102,8 @@ function ShowBookDetails(props) {
           <div className='col-md-6 m-auto'>
             <Link
               to={`/edit-book/${book._id}`}
-              className='btn btn-outline-info btn-lg btn-block'
+              className='btn btn-lg btn-block'
+              style={{ backgroundColor: '#64ffda', color: '#0a192f', marginTop: '20px' }}
             >
               Edit Book
             </Link>
