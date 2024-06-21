@@ -71,20 +71,21 @@ function ShowBookDetails(props) {
   );
 
   return (
-    <div className='ShowBookDetails' style={{ backgroundColor: '#0a192f', color: '#a8b2d1', minHeight: '100vh', padding: '20px' }}>
-      <div className='container'>
+    <div className='ShowBookDetails' style={{ backgroundColor: '#0a192f', color: '#a8b2d1', minHeight: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '20px' }}>
+      <div className='container' style={{ backgroundColor: '#112240', padding: '20px', borderRadius: '8px', boxShadow: '0 4px 8px rgba(0,0,0,0.1)' }}>
         <div className='row'>
-          <div className='col-md-10 m-auto text-center'>
-            <Link to='/' className='btn' style={{ backgroundColor: '#64ffda', color: '#0a192f', marginBottom: '20px' }}>
+          <div className='col-md-12 text-center'>
+            <Link to='/' className='btn' style={{ backgroundColor: '#64ffda', color: '#0a192f', marginBottom: '20px', padding: '10px 20px', borderRadius: '5px', textDecoration: 'none' }}>
               Show Book List
             </Link>
           </div>
-          <div className='col-md-8 m-auto'>
-            <h1 className='display-4 text-center'>Book's Record</h1>
-            <p className='lead text-center'>View Book's Info</p>
-            <hr /> <br />
+          <div className='col-md-12'>
+            <h1 className='display-4 text-center' style={{ marginBottom: '20px', fontWeight: 'bold' }}>Book's Record</h1>
+            <p className='lead text-center' style={{ marginBottom: '40px' }}>View Book's Info</p>
+            <hr style={{ borderColor: '#64ffda' }} />
+            <br />
           </div>
-          <div className='col-md-10 m-auto'>{BookItem}</div>
+          <div className='col-md-12'>{BookItem}</div>
           <div className='col-md-6 text-left'>
             <button
               type='button'
