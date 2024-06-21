@@ -27,7 +27,7 @@ function ShowBookDetails(props) {
         navigate('/');
       })
       .catch((err) => {
-        console.log('Error form ShowBookDetails_deleteClick');
+        console.log('Error from ShowBookDetails_deleteClick');
       });
   };
 
@@ -74,20 +74,18 @@ function ShowBookDetails(props) {
     <div className='ShowBookDetails' style={{ backgroundColor: '#0a192f', color: '#a8b2d1', minHeight: '100vh', padding: '20px' }}>
       <div className='container'>
         <div className='row'>
-          <div className='col-md-10 m-auto'>
-            <br /> <br />
+          <div className='col-md-10 m-auto text-center'>
             <Link to='/' className='btn' style={{ backgroundColor: '#64ffda', color: '#0a192f', marginBottom: '20px' }}>
               Show Book List
             </Link>
           </div>
-          <br />
           <div className='col-md-8 m-auto'>
             <h1 className='display-4 text-center'>Book's Record</h1>
             <p className='lead text-center'>View Book's Info</p>
             <hr /> <br />
           </div>
           <div className='col-md-10 m-auto'>{BookItem}</div>
-          <div className='col-md-6 m-auto'>
+          <div className='col-md-6 text-left'>
             <button
               type='button'
               className='btn btn-lg btn-block'
@@ -99,7 +97,7 @@ function ShowBookDetails(props) {
               Delete Book
             </button>
           </div>
-          <div className='col-md-6 m-auto'>
+          <div className='col-md-6 text-right'>
             <Link
               to={`/edit-book/${book._id}`}
               className='btn btn-lg btn-block'
