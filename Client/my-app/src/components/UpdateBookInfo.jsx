@@ -94,7 +94,7 @@ function UpdateBookInfo(props) {
       <div className="container" style={{ maxWidth: "700px", padding: "20px", backgroundColor: "#112240", boxShadow: "0 4px 8px rgba(0,0,0,0.1)", borderRadius: "8px" }}>
         <div className="row">
           <div className="col-12 text-center">
-            <Link to="/" className="btn" style={{ backgroundColor: "#64ffda", color: "#0a192f", marginBottom: "20px", padding: "10px 20px", borderRadius: "5px", textDecoration: "none" }}>
+            <Link to="/" className="btn" style={{ backgroundColor: "#64ffda", color: "#0a192f", marginBottom: "20px",fontWeight: "bold", padding: "10px 20px", borderRadius: "5px", textDecoration: "none" }}>
               Show Book List
             </Link>
           </div>
@@ -178,25 +178,21 @@ function UpdateBookInfo(props) {
                   </div>
                 </div>
               </div>
-              <div className="text-center">
+              <div className="button-container text-center">
                 <button
                   type="submit"
-                  className="btn mt-4 mb-4"
-                  style={{ backgroundColor: "#64ffda", color: "#0a192f", width: "50%", padding: "10px 20px", borderRadius: "5px", fontWeight: "bold" }}
+                  className="btn btn-update"
                 >
                   Update Book
                 </button>
+                <button
+                  onClick={deleteBook}
+                  className="btn btn-delete"
+                >
+                  Delete Book
+                </button>
               </div>
             </form>
-            <div className="text-center">
-              <button
-                onClick={deleteBook}
-                className="btn mt-4 mb-4"
-                style={{ backgroundColor: "#ff6b6b", color: "#0a192f", width: "50%", padding: "10px 20px", borderRadius: "5px", fontWeight: "bold" }}
-              >
-                Delete Book
-              </button>
-            </div>
           </div>
         </div>
       </div>

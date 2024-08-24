@@ -75,12 +75,12 @@ function ShowBookDetails(props) {
       <div className='container' style={{ backgroundColor: '#112240', padding: '20px', borderRadius: '8px', boxShadow: '0 4px 8px rgba(0,0,0,0.1)' }}>
         <div className='row'>
           <div className='col-md-12 text-center'>
-            <Link to='/' className='btn' style={{ backgroundColor: '#64ffda', color: '#0a192f', marginBottom: '20px', padding: '10px 20px', borderRadius: '5px', textDecoration: 'none' }}>
+            <Link to='/' className='btn' style={{ backgroundColor: '#64ffda', color: '#0a192f',fontWeight: 'bold', marginBottom: '20px', padding: '10px 20px', borderRadius: '10px', textDecoration: 'none' }}>
               Show Book List
             </Link>
           </div>
           <div className='col-md-12'>
-            <h1 className='display-4 text-center' style={{ marginBottom: '20px', fontWeight: 'bold' }}>Book's Record</h1>
+            <h1 className='display-6 text-center' style={{ marginBottom: '20px', fontWeight: 'bold' }}>Book's Record</h1>
             <p className='lead text-center' style={{ marginBottom: '40px' }}>View Book's Info</p>
             <hr style={{ borderColor: '#64ffda' }} />
             <br />
@@ -90,7 +90,7 @@ function ShowBookDetails(props) {
             <Link
               to={`/edit-book/${book._id}`}
               className='btn btn-lg btn-block'
-              style={{ backgroundColor: '#64ffda', color: '#0a192f', marginTop: '20px' }}
+              style={{ backgroundColor: '#64ffda', color: '#0a192f', marginTop: '10px' }}
             >
               Edit Book
             </Link>

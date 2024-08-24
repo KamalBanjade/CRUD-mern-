@@ -24,16 +24,16 @@ function ShowBookList() {
       : books.map((book, k) => <BookCard book={book} key={k} />);
 
   return (
-    <div className='ShowBookList' style={{ backgroundColor: "#0a192f", color: "#a8b2d1", minHeight: "100vh", padding: "20px", display: "flex", justifyContent: "center", alignItems: "center" }}>
-      <div className='container' style={{ backgroundColor: "#112240", padding: "20px", borderRadius: "8px", boxShadow: "0 4px 8px rgba(0,0,0,0.1)" }}>
+    <div className='ShowBookList' style={{ backgroundColor: "#0a192f", color: "#a8b2d1",  height:"auto", padding: "20px", display: "flex", justifyContent: "center", alignItems: "center" }}>
+      <div className='container' style={{ backgroundColor: "#112240", padding: "20px", borderRadius: "10px",border:"1px solid #002361", boxShadow: "0 4px 8px rgba(0,0,0,0.1)" }}>
         <div className='row'>
           <div className='col-md-12 text-center'>
             <br />
-            <h2 className='display-4' style={{ color: "#a8b2d1", marginBottom: "20px", fontWeight: "bold" }}>Books List</h2>
+            <h2 className='display-6' style={{  color: "#a8b2d1", marginBottom: "20px", fontWeight: "bold" }}>Books List</h2>
             <Link
               to='/create-book'
               className='btn'
-              style={{ backgroundColor: "#64ffda", color: "#0a192f", marginBottom: "20px", padding: "10px 20px", borderRadius: "5px", textDecoration: "none" }}
+              style={{ backgroundColor: "#64ffda", color: "#0a192f", marginBottom: "20px",fontWeight: "bold", padding: "10px 20px", borderRadius: "10px", textDecoration: "none" }}
             >
               + Add New Book
             </Link>
