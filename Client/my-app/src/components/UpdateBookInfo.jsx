@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import '../App.css';
 
 function UpdateBookInfo(props) {
@@ -53,15 +55,41 @@ function UpdateBookInfo(props) {
     axios
       .put(`http://localhost:8082/api/books/${id}`, data)
       .then((res) => {
-        navigate(`/show-book/${id}`);
+        toast.success('Book updated successfully!', {
+          position: 'top-center',
+        });
+        setTimeout(() => {
+          navigate(`/show-book/${id}`);
+        }, 2000);
       })
       .catch((err) => {
-        console.log('Error in UpdateBookInfo!');
+        toast.error('Failed to update book.', {
+          position: 'top-center',
+        });
+      });
+  };
+
+  const deleteBook = () => {
+    axios
+      .delete(`http://localhost:8082/api/books/${id}`)
+      .then((res) => {
+        toast.success('Book deleted successfully!', {
+          position: 'top-center',
+        });
+        setTimeout(() => {
+          navigate('/');
+        }, 2000);
+      })
+      .catch((err) => {
+        toast.error('Failed to delete book.', {
+          position: 'top-center',
+        });
       });
   };
 
   return (
     <div className="UpdateBookInfo" style={{ backgroundColor: "#0a192f", color: "#a8b2d1", minHeight: "100vh", display: "flex", justifyContent: "center", alignItems: "center", position: "relative" }}>
+      <ToastContainer />
       <div className="background-layer" style={{ position: "absolute", width: "100%", height: "100%", backgroundColor: "#112240", zIndex: -1 }}></div>
       <div className="container" style={{ maxWidth: "700px", padding: "20px", backgroundColor: "#112240", boxShadow: "0 4px 8px rgba(0,0,0,0.1)", borderRadius: "8px" }}>
         <div className="row">
@@ -160,6 +188,15 @@ function UpdateBookInfo(props) {
                 </button>
               </div>
             </form>
+            <div className="text-center">
+              <button
+                onClick={deleteBook}
+                className="btn mt-4 mb-4"
+                style={{ backgroundColor: "#ff6b6b", color: "#0a192f", width: "50%", padding: "10px 20px", borderRadius: "5px", fontWeight: "bold" }}
+              >
+                Delete Book
+              </button>
+            </div>
           </div>
         </div>
       </div>

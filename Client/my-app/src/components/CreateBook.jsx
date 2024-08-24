@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import '../App.css'; // Make sure this imports your CSS file
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+import '../App.css';
 
-const CreateBook = (props) => {
+const CreateBook = () => {
   const navigate = useNavigate();
 
   const [book, setBook] = useState({
@@ -33,17 +35,26 @@ const CreateBook = (props) => {
           published_date: "",
           publisher: "",
         });
-        navigate("/");
+        toast.success("Successfully created book!", {
+          position: "top-center",
+        });
+        setTimeout(() => {
+          navigate("/");
+        }, 1000); // Navigate after 2 seconds
       })
       .catch((err) => {
         console.log("Error in CreateBook!");
+        toast.error("Failed to create book.", {
+          position: "top-center",
+        });
       });
   };
 
   return (
     <div className="CreateBook" style={{ backgroundColor: "#0a192f", color: "#a8b2d1", minHeight: "100vh", display: "flex", justifyContent: "center", alignItems: "center", position: "relative" }}>
       <div className="background-layer" style={{ position: "absolute", width: "100%", height: "100%", backgroundColor: "#112240", zIndex: -1 }}></div>
-      <div className="container" style={{ maxWidth: "700px", padding: "20px",  boxShadow: "0 4px 8px rgba(0,0,0,0.2)", borderRadius: "10px" }}>
+      <div className="container" style={{ maxWidth: "700px", padding: "20px", boxShadow: "0 4px 8px rgba(0,0,0,0.2)", borderRadius: "10px" }}>
+        <ToastContainer />
         <div className="row">
           <div className="col-12 text-center">
             <Link to="/" className="btn" style={{ backgroundColor: "#64ffda", color: "#0a192f", marginBottom: "20px", padding: "10px 20px", borderRadius: "5px", textDecoration: "none" }}>

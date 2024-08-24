@@ -86,18 +86,6 @@ function ShowBookDetails(props) {
             <br />
           </div>
           <div className='col-md-12'>{BookItem}</div>
-          <div className='col-md-6 text-left'>
-            <button
-              type='button'
-              className='btn btn-lg btn-block'
-              style={{ backgroundColor: '#64ffda', color: '#0a192f', marginTop: '20px' }}
-              onClick={() => {
-                onDeleteClick(book._id);
-              }}
-            >
-              Delete Book
-            </button>
-          </div>
           <div className='col-md-6 text-right'>
             <Link
               to={`/edit-book/${book._id}`}
