@@ -3,6 +3,7 @@ import { Link, useParams, useNavigate } from 'react-router-dom';
 import '../App.css';
 import axios from 'axios';
 
+
 function ShowBookDetails(props) {
   const [book, setBook] = useState({});
 
@@ -74,15 +75,33 @@ function ShowBookDetails(props) {
     <div className='ShowBookDetails' style={{ backgroundColor: '#0a192f', color: '#a8b2d1', minHeight: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '20px' }}>
       <div className='container' style={{ backgroundColor: '#112240', padding: '20px', borderRadius: '8px', boxShadow: '0 4px 8px rgba(0,0,0,0.1)' }}>
         <div className='row'>
-          <div className="col-md-12 text-center">
+          <div className="col-md-12 text-left">
             <Link
               to="/"
               className="btn hover-effect"
-              style={{ marginBottom: "20px", padding: "10px 20px", borderRadius: "10px" }}
+              style={{
+                marginBottom: "10px",
+                padding: "10px 20px",
+                display: "inline-flex",
+                alignItems: "center",
+              }}
             >
-              Show Book List
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 100 100"
+                fill="currentColor"
+                width="20px"
+                height="20px"
+                style={{ marginRight: "8px", borderRadius:"50%"}}
+              >
+                <circle cx="50" cy="50" r="50" fill="black" />
+                <polygon points="60,30 40,50 60,70" fill="white" />
+              </svg>
+              Back
             </Link>
           </div>
+
+
           <div className='col-md-12'>
             <h1 className='display-6 text-center' style={{ marginBottom: '20px', fontWeight: 'bold' }}>Book's Record</h1>
             <p className='lead text-center' style={{ marginBottom: '40px' }}>View Book's Info</p>

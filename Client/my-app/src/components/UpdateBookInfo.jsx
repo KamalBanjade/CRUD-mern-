@@ -77,8 +77,8 @@ function UpdateBookInfo(props) {
           position: 'top-right',
         });
         setTimeout(() => {
-          navigate('/');
-        }, 2000);
+          navigate('/');  // Redirect to home page after deletion
+        }, 1000);
       })
       .catch((err) => {
         toast.error('Failed to delete book.', {
@@ -94,12 +94,12 @@ function UpdateBookInfo(props) {
       <div className="container" style={{ maxWidth: "700px", padding: "20px", backgroundColor: "#112240", boxShadow: "4px 0px 8px rgba(0,0,0,0.1), -4px 0px 8px rgba(0,0,0,0.1)", borderRadius: "8px" }}>
         <div className="row">
           <div className="col-12 text-center">
-            <Link to="/" className="btn" style={{ backgroundColor: "#64ffda", color: "#0a192f", marginBottom: "20px",fontWeight: "bold", padding: "10px 20px", borderRadius: "5px", textDecoration: "none" }}>
+            <Link to="/" className="btn" style={{ backgroundColor: "#64ffda", color: "#0a192f", marginBottom: "20px", fontWeight: "bold", padding: "10px 20px", borderRadius: "5px", textDecoration: "none" }}>
               Show Book List
             </Link>
           </div>
           <div className="col-12">
-            <h1 className="text-center" style={{ marginBottom: "20px", fontWeight: "bold", fontSize:"30px" }}>Edit Book</h1>
+            <h1 className="text-center" style={{ marginBottom: "20px", fontWeight: "bold", fontSize: "30px" }}>Edit Book</h1>
             <p className="lead text-center" style={{ marginBottom: "40px" }}>Update Book's Info</p>
             <form noValidate onSubmit={onSubmit}>
               <div className="row">
@@ -186,11 +186,13 @@ function UpdateBookInfo(props) {
                   Update Book
                 </button>
                 <button
-                  onClick={deleteBook}
+                  type="button"  // Change this from "submit" to "button"
                   className="btn btn-delete"
+                  onClick={deleteBook}  // Call deleteBook on click
                 >
                   Delete Book
                 </button>
+
               </div>
             </form>
           </div>
