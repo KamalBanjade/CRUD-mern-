@@ -5,7 +5,7 @@ import axios from 'axios';
 
 function ShowBookDetails(props) {
   const [book, setBook] = useState({});
-  
+
   const { id } = useParams();
   const navigate = useNavigate();
 
@@ -74,8 +74,12 @@ function ShowBookDetails(props) {
     <div className='ShowBookDetails' style={{ backgroundColor: '#0a192f', color: '#a8b2d1', minHeight: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '20px' }}>
       <div className='container' style={{ backgroundColor: '#112240', padding: '20px', borderRadius: '8px', boxShadow: '0 4px 8px rgba(0,0,0,0.1)' }}>
         <div className='row'>
-          <div className='col-md-12 text-center'>
-            <Link to='/' className='btn' style={{ backgroundColor: '#64ffda', color: '#0a192f',fontWeight: 'bold', marginBottom: '20px', padding: '10px 20px', borderRadius: '10px', textDecoration: 'none' }}>
+          <div className="col-md-12 text-center">
+            <Link
+              to="/"
+              className="btn hover-effect"
+              style={{ marginBottom: "20px", padding: "10px 20px", borderRadius: "10px" }}
+            >
               Show Book List
             </Link>
           </div>
@@ -86,11 +90,11 @@ function ShowBookDetails(props) {
             <br />
           </div>
           <div className='col-md-12'>{BookItem}</div>
-          <div className='col-md-6 text-right'>
+          <div className="col-md-6 text-right">
             <Link
               to={`/edit-book/${book._id}`}
-              className='btn btn-lg btn-block'
-              style={{ backgroundColor: '#64ffda', color: '#0a192f', marginTop: '10px' }}
+              className="btn btn-lg btn-block hover-effect"
+              style={{ marginTop: "10px", fontSize: "15px" }}
             >
               Edit Book
             </Link>

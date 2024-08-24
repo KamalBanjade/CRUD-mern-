@@ -36,7 +36,7 @@ const CreateBook = () => {
           publisher: "",
         });
         toast.success("Successfully created book!", {
-          position: "top-center",
+          position: "top-right",
         });
         setTimeout(() => {
           navigate("/");
@@ -45,19 +45,31 @@ const CreateBook = () => {
       .catch((err) => {
         console.log("Error in CreateBook!");
         toast.error("Failed to create book.", {
-          position: "top-center",
+          position: "top-right",
         });
       });
   };
 
   return (
-    <div className="CreateBook" style={{ backgroundColor: "#0a192f", color: "#a8b2d1", minHeight: "100vh", display: "flex", justifyContent: "center", alignItems: "center", position: "relative" }}>
+    <div className="CreateBook" style={{ backgroundColor: "#0a192f", color: "#a8b2d1", height: "auto", display: "flex", justifyContent: "center", alignItems: "center", position: "relative" }}>
       <div className="background-layer" style={{ position: "absolute", width: "100%", height: "100%", backgroundColor: "#112240", zIndex: -1 }}></div>
-      <div className="container" style={{ maxWidth: "700px", padding: "20px", boxShadow: "0 4px 8px rgba(0,0,0,0.2)", borderRadius: "10px" }}>
+      <div
+        className="container"
+        style={{
+          maxWidth: "700px",
+          padding: "20px",
+          boxShadow: "8px 0px 8px rgba(0,0,0,0.2), -8px 0px 8px rgba(0,0,0,0.2)",
+          borderRadius: "10px",
+        }}
+      >
         <ToastContainer />
         <div className="row">
           <div className="col-12 text-center">
-            <Link to="/" className="btn" style={{ backgroundColor: "#64ffda", color: "#0a192f", marginBottom: "20px", padding: "10px 20px", borderRadius: "5px", textDecoration: "none" }}>
+            <Link
+              to="/"
+              className="btn hover-effect"
+              style={{ marginBottom: "20px", padding: "10px 20px", borderRadius: "5px" }}
+            >
               Show Book List
             </Link>
           </div>
@@ -76,7 +88,7 @@ const CreateBook = () => {
                       className="form-control input-placeholder"
                       value={book.title}
                       onChange={onChange}
-                      style={{ backgroundColor: "#0a192f", color: "#a8b2d1", border: "1px solid #64ffda", borderRadius: "5px", padding: "10px" }}
+                      style={{ backgroundColor: "#0a192f", color: "#a8b2d1", border: "1px solid #64ffda", borderRadius: "10px", padding: "10px" }}
                     />
                   </div>
                   <div className="form-group" style={{ marginBottom: "20px" }}>
@@ -88,7 +100,7 @@ const CreateBook = () => {
                       className="form-control input-placeholder"
                       value={book.author}
                       onChange={onChange}
-                      style={{ backgroundColor: "#0a192f", color: "#a8b2d1", border: "1px solid #64ffda", borderRadius: "5px", padding: "10px" }}
+                      style={{ backgroundColor: "#0a192f", color: "#a8b2d1", border: "1px solid #64ffda", borderRadius: "10px", padding: "10px" }}
                     />
                   </div>
                   <div className="form-group" style={{ marginBottom: "20px" }}>
@@ -99,7 +111,7 @@ const CreateBook = () => {
                       className="form-control input-placeholder"
                       value={book.published_date}
                       onChange={onChange}
-                      style={{ backgroundColor: "#0a192f", color: "#a8b2d1", border: "1px solid #64ffda", borderRadius: "5px", padding: "10px" }}
+                      style={{ backgroundColor: "#0a192f", color: "#a8b2d1", border: "1px solid #64ffda", borderRadius: "10px", padding: "10px" }}
                     />
                   </div>
                 </div>
@@ -113,7 +125,7 @@ const CreateBook = () => {
                       className="form-control input-placeholder"
                       value={book.isbn}
                       onChange={onChange}
-                      style={{ backgroundColor: "#0a192f", color: "#a8b2d1", border: "1px solid #64ffda", borderRadius: "5px", padding: "10px" }}
+                      style={{ backgroundColor: "#0a192f", color: "#a8b2d1", border: "1px solid #64ffda", borderRadius: "10px", padding: "10px" }}
                     />
                   </div>
                   <div className="form-group" style={{ marginBottom: "20px" }}>
@@ -125,7 +137,7 @@ const CreateBook = () => {
                       className="form-control input-placeholder"
                       value={book.publisher}
                       onChange={onChange}
-                      style={{ backgroundColor: "#0a192f", color: "#a8b2d1", border: "1px solid #64ffda", borderRadius: "5px", padding: "10px" }}
+                      style={{ backgroundColor: "#0a192f", color: "#a8b2d1", border: "1px solid #64ffda", borderRadius: "10px", padding: "10px" }}
                     />
                   </div>
                   <div className="form-group" style={{ marginBottom: "20px" }}>
@@ -136,7 +148,7 @@ const CreateBook = () => {
                       className="form-control input-placeholder"
                       value={book.description}
                       onChange={onChange}
-                      style={{ backgroundColor: "#0a192f", color: "#a8b2d1", border: "1px solid #64ffda", borderRadius: "5px", padding: "10px", resize: "vertical", minHeight: "100px" }}
+                      style={{ backgroundColor: "#0a192f", color: "#a8b2d1", border: "1px solid #64ffda", borderRadius: "10px", padding: "10px", resize: "vertical", minHeight: "100px" }}
                     />
                   </div>
                 </div>
@@ -144,8 +156,7 @@ const CreateBook = () => {
               <div className="text-center">
                 <button
                   type="submit"
-                  className="btn mt-4 mb-4"
-                  style={{ backgroundColor: "#64ffda", color: "#0a192f", width: "50%", padding: "10px 20px", borderRadius: "5px", fontWeight: "bold" }}
+                  className="btn mt-4 mb-4 hover-button"
                 >
                   Submit
                 </button>
@@ -153,8 +164,8 @@ const CreateBook = () => {
             </form>
           </div>
         </div>
-      </div>
-    </div>
+      </div >
+    </div >
   );
 };
 

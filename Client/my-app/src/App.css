@@ -111,6 +111,33 @@
 }
 .btn-delete:hover{
   background-color: #d20404;
-  color: black;
+  color: #ccd6f6;
   
+}
+.hover-button {
+  background-color: #64ffda;
+  color: #0a192f;
+  width: 50%;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.hover-button:hover {
+  background-color: #019f79;
+  color: #ccd6f6;
+}
+.hover-effect {
+  background-color: #64ffda;
+  color: #0a192f;
+  font-weight: bold;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.hover-effect:hover {
+  background-color: #019f79;
+  color: #ccd6f6; /* Color change on hover */
 }

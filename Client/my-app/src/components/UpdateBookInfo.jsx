@@ -56,7 +56,7 @@ function UpdateBookInfo(props) {
       .put(`http://localhost:8082/api/books/${id}`, data)
       .then((res) => {
         toast.success('Book updated successfully!', {
-          position: 'top-center',
+          position: 'top-right',
         });
         setTimeout(() => {
           navigate(`/show-book/${id}`);
@@ -64,7 +64,7 @@ function UpdateBookInfo(props) {
       })
       .catch((err) => {
         toast.error('Failed to update book.', {
-          position: 'top-center',
+          position: 'top-right',
         });
       });
   };
@@ -74,7 +74,7 @@ function UpdateBookInfo(props) {
       .delete(`http://localhost:8082/api/books/${id}`)
       .then((res) => {
         toast.success('Book deleted successfully!', {
-          position: 'top-center',
+          position: 'top-right',
         });
         setTimeout(() => {
           navigate('/');
@@ -82,7 +82,7 @@ function UpdateBookInfo(props) {
       })
       .catch((err) => {
         toast.error('Failed to delete book.', {
-          position: 'top-center',
+          position: 'top-right',
         });
       });
   };
@@ -91,7 +91,7 @@ function UpdateBookInfo(props) {
     <div className="UpdateBookInfo" style={{ backgroundColor: "#0a192f", color: "#a8b2d1", minHeight: "100vh", display: "flex", justifyContent: "center", alignItems: "center", position: "relative" }}>
       <ToastContainer />
       <div className="background-layer" style={{ position: "absolute", width: "100%", height: "100%", backgroundColor: "#112240", zIndex: -1 }}></div>
-      <div className="container" style={{ maxWidth: "700px", padding: "20px", backgroundColor: "#112240", boxShadow: "0 4px 8px rgba(0,0,0,0.1)", borderRadius: "8px" }}>
+      <div className="container" style={{ maxWidth: "700px", padding: "20px", backgroundColor: "#112240", boxShadow: "4px 0px 8px rgba(0,0,0,0.1), -4px 0px 8px rgba(0,0,0,0.1)", borderRadius: "8px" }}>
         <div className="row">
           <div className="col-12 text-center">
             <Link to="/" className="btn" style={{ backgroundColor: "#64ffda", color: "#0a192f", marginBottom: "20px",fontWeight: "bold", padding: "10px 20px", borderRadius: "5px", textDecoration: "none" }}>
@@ -99,7 +99,7 @@ function UpdateBookInfo(props) {
             </Link>
           </div>
           <div className="col-12">
-            <h1 className="display-6 text-center" style={{ marginBottom: "20px", fontWeight: "bold" }}>Edit Book</h1>
+            <h1 className="text-center" style={{ marginBottom: "20px", fontWeight: "bold", fontSize:"30px" }}>Edit Book</h1>
             <p className="lead text-center" style={{ marginBottom: "40px" }}>Update Book's Info</p>
             <form noValidate onSubmit={onSubmit}>
               <div className="row">
@@ -113,7 +113,7 @@ function UpdateBookInfo(props) {
                       className="form-control input-placeholder"
                       value={book.title}
                       onChange={onChange}
-                      style={{ backgroundColor: "#0a192f", color: "#a8b2d1", border: "1px solid #64ffda", borderRadius: "5px", padding: "10px" }}
+                      style={{ backgroundColor: "#0a192f", color: "#a8b2d1", border: "1px dashed #64ffda", borderRadius: "10px", padding: "10px" }}
                     />
                   </div>
                   <div className="form-group" style={{ marginBottom: "20px" }}>
@@ -125,7 +125,7 @@ function UpdateBookInfo(props) {
                       className="form-control input-placeholder"
                       value={book.author}
                       onChange={onChange}
-                      style={{ backgroundColor: "#0a192f", color: "#a8b2d1", border: "1px solid #64ffda", borderRadius: "5px", padding: "10px" }}
+                      style={{ backgroundColor: "#0a192f", color: "#a8b2d1", border: "1px dashed #64ffda", borderRadius: "10px", padding: "10px" }}
                     />
                   </div>
                   <div className="form-group" style={{ marginBottom: "20px" }}>
@@ -136,7 +136,7 @@ function UpdateBookInfo(props) {
                       className="form-control input-placeholder"
                       value={book.published_date}
                       onChange={onChange}
-                      style={{ backgroundColor: "#0a192f", color: "#a8b2d1", border: "1px solid #64ffda", borderRadius: "5px", padding: "10px" }}
+                      style={{ backgroundColor: "#0a192f", color: "#a8b2d1", border: "1px dashed #64ffda", borderRadius: "10px", padding: "10px" }}
                     />
                   </div>
                 </div>
@@ -150,7 +150,7 @@ function UpdateBookInfo(props) {
                       className="form-control input-placeholder"
                       value={book.isbn}
                       onChange={onChange}
-                      style={{ backgroundColor: "#0a192f", color: "#a8b2d1", border: "1px solid #64ffda", borderRadius: "5px", padding: "10px" }}
+                      style={{ backgroundColor: "#0a192f", color: "#a8b2d1", border: "1px dashed #64ffda", borderRadius: "10px", padding: "10px" }}
                     />
                   </div>
                   <div className="form-group" style={{ marginBottom: "20px" }}>
@@ -162,7 +162,7 @@ function UpdateBookInfo(props) {
                       className="form-control input-placeholder"
                       value={book.publisher}
                       onChange={onChange}
-                      style={{ backgroundColor: "#0a192f", color: "#a8b2d1", border: "1px solid #64ffda", borderRadius: "5px", padding: "10px" }}
+                      style={{ backgroundColor: "#0a192f", color: "#a8b2d1", border: "1px dashed #64ffda", borderRadius: "10px", padding: "10px" }}
                     />
                   </div>
                   <div className="form-group" style={{ marginBottom: "20px" }}>
@@ -173,7 +173,7 @@ function UpdateBookInfo(props) {
                       className="form-control input-placeholder"
                       value={book.description}
                       onChange={onChange}
-                      style={{ backgroundColor: "#0a192f", color: "#a8b2d1", border: "1px solid #64ffda", borderRadius: "5px", padding: "10px", resize: "vertical", minHeight: "100px" }}
+                      style={{ backgroundColor: "#0a192f", color: "#a8b2d1", border: "1px dashed #64ffda", borderRadius: "10px", padding: "10px", resize: "vertical", minHeight: "10-0px" }}
                     />
                   </div>
                 </div>
